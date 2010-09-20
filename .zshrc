@@ -44,6 +44,10 @@ set_rprompt() {
         user_color=blue
     elif [ `hostname` = liesa.local ]; then
         user_color=magenta
+    elif [ `hostname` = walter.local ]; then
+        user_color=green
+    elif [ `hostname` = pamela.local ]; then
+        user_color=magenta
     fi
     RPROMPT="%{${fg[$user_color]}%}[%~]%{${reset_color}%}"
 }
