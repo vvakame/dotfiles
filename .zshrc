@@ -2,7 +2,7 @@ autoload -U compinit
 compinit
 
 export LANG=ja_JP.UTF-8
-export PATH=~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:~/work/android-sdk-mac_86/tools:$PATH
+export PATH=~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:~/work/android-sdk-mac_86/tools:~/work/android-sdk-mac_x86/tools:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 export SCALA_HOME=/opt/local/share/scala
 export ANDROID_SDK_ROOT=~/work/android-sdk-mac_86
