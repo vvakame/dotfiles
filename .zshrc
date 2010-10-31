@@ -48,6 +48,8 @@ set_rprompt() {
         user_color=green
     elif [ `hostname` = pamela.local ]; then
         user_color=magenta
+    elif [ `hostname` = ip21-pc.topgate.lan ]; then
+        user_color=green
     fi
     RPROMPT="%{${fg[$user_color]}%}[%~]%{${reset_color}%}"
 }
