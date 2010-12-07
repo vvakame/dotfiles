@@ -2,12 +2,13 @@ autoload -U compinit
 compinit
 
 export LANG=ja_JP.UTF-8
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:~/work/android-sdk-mac_x86/tools:$PATH
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 export SCALA_HOME=/opt/local/share/scala
 export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
+# export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
