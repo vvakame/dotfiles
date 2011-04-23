@@ -8,6 +8,7 @@ export SCALA_HOME=/opt/local/share/scala
 export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
+export JAVA_HOME=$(/usr/libexec/java_home)
 # export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 HISTFILE=~/.zsh_history
