@@ -39,8 +39,7 @@ RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
-
-alias pwdweb="python -m SimpleHTTPServer 8989"
+alias pwdweb="python -m SimpleHTTPServer 8989" 
 
 set_rprompt() {
     local user_color
