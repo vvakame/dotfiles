@@ -2,13 +2,16 @@ autoload -U compinit
 compinit
 
 export LANG=ja_JP.UTF-8
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
-export MANPATH=/opt/local/man:$MANPATH
-export SCALA_HOME=/opt/local/share/scala
+
 export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
-# export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
+
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PATH
+export MANPATH=/opt/local/man:$MANPATH
+export SCALA_HOME=/opt/local/share/scala
+export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -36,6 +39,8 @@ RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
+
+alias pwdweb="python -m SimpleHTTPServer 8989"
 
 set_rprompt() {
     local user_color

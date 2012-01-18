@@ -3,3 +3,5 @@
 	email = vvakame+dev@gmail.com
 [color]
 	ui = auto
+[alias]
+	graph = log --graph --all --pretty=format:'%Cgreen%h%Creset %cn %s %Cred%d%Creset'
