@@ -10,7 +10,7 @@ export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
 
 export SCALA_HOME=/opt/local/share/scala
 
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PATH
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:~/work/bin/play-2.0-beta/:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
