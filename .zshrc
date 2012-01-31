@@ -3,9 +3,9 @@ compinit
 
 export LANG=ja_JP.UTF-8
 
-if [ `hostname` = "vv-temp.local" ] ; then
+if [ -d "~/android-sdks" ]; then
   export ANDROID_SDK_ROOT=~/android-sdks
-else
+elif [ -d "~/work/android-sdk-mac_x86" ]; then
   export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 fi
 
