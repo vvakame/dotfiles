@@ -9,7 +9,7 @@ else
   export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 fi
 
-export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
+# export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
 export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
