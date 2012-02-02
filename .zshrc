@@ -3,9 +3,9 @@ compinit
 
 export LANG=ja_JP.UTF-8
 
-if [ -d "~/android-sdks" ]; then
+if [ -d ~/android-sdks ]; then
   export ANDROID_SDK_ROOT=~/android-sdks
-elif [ -d "~/work/android-sdk-mac_x86" ]; then
+elif [ -d ~/work/android-sdk-mac_x86 ]; then
   export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 fi
 
