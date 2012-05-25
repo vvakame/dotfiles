@@ -18,7 +18,7 @@ export SCALA_HOME=/opt/local/share/scala
 # export PLAY_HOME=~/work/bin/play-2.0-beta
 export PLAY_HOME=~/work/bin/Play20
 
-export DART_SDK=~/work/dart-sdk
+export DART_SDK=/Applications/dart/dart-sdk
 
 export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
@@ -39,6 +39,7 @@ setopt inc_append_history
 setopt hist_no_store
 setopt hist_reduce_blanks
 setopt no_beep
+setopt hist_ignore_space
 
 autoload colors
 colors
