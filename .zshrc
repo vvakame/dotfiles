@@ -20,7 +20,7 @@ export PLAY_HOME=~/work/bin/Play20
 
 export DART_SDK=/Applications/dart/dart-sdk
 
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:$PATH
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:~/work/JSX/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
