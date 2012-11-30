@@ -1,3 +1,5 @@
+(setq inhibit-splash-screen t)
+
 ;; el-get インストール後のロードパスの用意
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 ;; もし el-get がなければインストールを行う
@@ -26,6 +28,8 @@
 
 (require 'haskell-mode)
 (add-to-list 'auto-mode-alist '("\\.[hg]s$" . haskell-mode))
+(custom-set-variables
+ '(haskell-mode-hook '(turn-on-haskell-indentation)))
 
 ;; ghc-mod のHook
 (autoload 'ghc-init "ghc" nil t)
