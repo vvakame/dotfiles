@@ -22,7 +22,7 @@ export PLAY_HOME=~/work/bin/Play20
 
 export DART_SDK=/Applications/dart/dart-sdk
 
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:~/work/JSX/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:$PATH
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:~/work/JSX/bin:$HOME/.rbenv/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
@@ -79,4 +79,3 @@ set_rprompt() {
 set_rprompt
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
