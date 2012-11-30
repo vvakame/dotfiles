@@ -11,18 +11,17 @@ fi
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 
-# export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
-export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
+# export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
 
 export SCALA_HOME=/opt/local/share/scala
 # export PLAY_HOME=~/work/bin/play-2.0-beta
-export PLAY_HOME=~/work/bin/Play20
+# export PLAY_HOME=~/work/bin/Play20
 
 export DART_SDK=/Applications/dart/dart-sdk
 
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:~/work/JSX/bin:$HOME/.rbenv/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:$PATH
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:$DART_SDK/bin:~/work/JSX/bin:$HOME/.rbenv/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
