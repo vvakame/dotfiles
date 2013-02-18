@@ -22,6 +22,8 @@ export SCALA_HOME=/opt/local/share/scala
 export DART_SDK=/Applications/dart/dart-sdk
 export GOROOT=/usr/local/go
 
+export PHANTOMJS_BIN=/opt/local/bin/phantomjs
+
 export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:$GOROOT/bin:~/work/JSX/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:$PATH
 
 export MANPATH=/opt/local/man:$MANPATH
