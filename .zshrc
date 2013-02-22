@@ -9,22 +9,22 @@ elif [ -d ~/work/android-sdk-mac_x86 ]; then
   export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 fi
 
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+# export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home
 
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
 # export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
 
 export SCALA_HOME=/opt/local/share/scala
-# export PLAY_HOME=~/work/bin/play-2.0-beta
-# export PLAY_HOME=~/work/bin/Play20
+export PLAY_HOME=~/work/play-2.0.4
 
 export DART_SDK=/Applications/dart/dart-sdk
 export GOROOT=/usr/local/go
 
 export PHANTOMJS_BIN=/opt/local/bin/phantomjs
 
-export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:$GOROOT/bin:~/work/JSX/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:$PATH
+export PATH=~/bin:~/work/bin:/opt/local/bin:/opt/local/sbin/:~/work/bin/sbt:i$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT:~/work/scala-2.8.1.final/bin/:$PLAY_HOME:$DART_SDK/bin:$GOROOT/bin:~/work/JSX/bin:/Users/vvakame/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin:~/work/gcutil/gcutil-1.7.1:$PATH
 
 export MANPATH=/opt/local/man:$MANPATH
 
