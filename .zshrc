@@ -24,8 +24,10 @@ export GOROOT=/usr/local/go
 
 export PHANTOMJS_BIN=/opt/local/bin/phantomjs
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/vvakame/.gvm/bin/gvm-init.sh" && -z $(which gvm-init.sh | grep '/gvm-init.sh') ]] && source "/Users/vvakame/.gvm/bin/gvm-init.sh"
+# setup gvm (Groovy)
+if [ -s ~/.gvm/bin/gvm-init.sh ]; then
+  source ~/.gvm/bin/gvm-init.sh
+fi
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
