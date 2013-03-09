@@ -16,8 +16,6 @@ export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
 # export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
 
-export GRADLE_HOME=/opt/local/share/java/gradle
-
 export SCALA_HOME=/opt/local/share/scala
 export PLAY_HOME=~/work/play-2.0.4
 
@@ -25,6 +23,9 @@ export DART_SDK=/Applications/dart/dart-sdk
 export GOROOT=/usr/local/go
 
 export PHANTOMJS_BIN=/opt/local/bin/phantomjs
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/vvakame/.gvm/bin/gvm-init.sh" && -z $(which gvm-init.sh | grep '/gvm-init.sh') ]] && source "/Users/vvakame/.gvm/bin/gvm-init.sh"
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
@@ -93,5 +94,4 @@ set_rprompt() {
 }
 
 set_rprompt
-
 
