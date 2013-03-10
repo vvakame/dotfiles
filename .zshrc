@@ -28,6 +28,7 @@ export PHANTOMJS_BIN=/opt/local/bin/phantomjs
 if [ -s ~/.gvm/bin/gvm-init.sh ]; then
   source ~/.gvm/bin/gvm-init.sh
 fi
+export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
