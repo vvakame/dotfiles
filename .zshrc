@@ -20,7 +20,7 @@ export SCALA_HOME=/opt/local/share/scala
 export PLAY_HOME=~/work/play-2.0.4
 
 export DART_SDK=/Applications/dart/dart-sdk
-export GOROOT=/usr/local/go
+export GOROOT=~/work/bin/go
 
 export PHANTOMJS_BIN=/opt/local/bin/phantomjs
 
@@ -38,10 +38,13 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_
 # google
 export PATH=$PATH:~/work/gcutil/gcutil-1.7.1:~/work/gsutil
 # misc
-export PATH=$PATH:~/work/JSX/bin
 export PATH=$PATH:$HOME/.rbenv/bin
+eval "$(rbenv init - zsh)"
 export PATH=$PATH:~/Library/Haskell/ghc-7.4.2/lib/ghc-mod-1.11.2/bin
 export PATH=$PATH:~/.nodebrew/current/bin
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:~/work/appengine/go_appengine_sdk_darwin_amd64-1.7.7
+export PATH=$PATH:~/bin
 
 export MANPATH=/opt/local/man:$MANPATH
 
