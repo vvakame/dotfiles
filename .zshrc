@@ -45,6 +45,7 @@ export PATH=$PATH:~/.nodebrew/current/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:~/work/appengine/go_appengine_sdk_darwin_amd64-1.7.7
 export PATH=$PATH:~/bin
+export PATH=$PATH:/usr/texbin
 
 export MANPATH=/opt/local/man:$MANPATH
 
