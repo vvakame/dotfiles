@@ -1,7 +1,7 @@
 #! /bin/bash
-ln -s ~/dotfiles/.zshrc ~/
-ln -s ~/dotfiles/.screenrc ~/
-ln -s ~/dotfiles/.gitconfig ~/
-ln -s ~/dotfiles/.emacs ~/
-# ln -s ~/dotfiles/.vimrc ~/
+ln -s ~/src/dotfiles/.zshrc ~/
+ln -s ~/src/dotfiles/.screenrc ~/
+ln -s ~/src/dotfiles/.gitconfig ~/
+ln -s ~/src/dotfiles/.emacs ~/
+# ln -s ~/src/dotfiles/.vimrc ~/
 

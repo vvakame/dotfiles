@@ -1,6 +1,8 @@
 autoload -U compinit
 compinit
 
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 export LANG=ja_JP.UTF-8
 
 if [ -d ~/android-sdks ]; then
