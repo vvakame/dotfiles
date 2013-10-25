@@ -5,7 +5,7 @@
 	ui = auto
 [core]
 	quotepath = false
-	excludesfile = /Users/vvakame/.gitignore_global
+	excludesfile = /opt/boxen/config/git/gitignore
 [alias]
 	graph = log --graph --all --pretty=format:'%Cgreen%h%Creset %cn %s %Cred%d%Creset'
 
@@ -17,3 +17,9 @@
 	trustExitCode = true
 [push]
 	default = simple
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https
