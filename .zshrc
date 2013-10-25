@@ -34,6 +34,8 @@ export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+# nvm より優先する
+export PATH=~/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
 # android
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT
@@ -43,7 +45,6 @@ export PATH=$PATH:~/work/gcutil/gcutil-1.8.3:~/work/gsutil
 export PATH=$HOME/.rbenv/bin:~/.rbenv/shims/:$PATH
 eval "$(rbenv init - zsh)"
 export PATH=$PATH:~/Library/Haskell/ghc-7.6.3/lib/ghc-mod-1.11.2/bin
-export PATH=$PATH:~/.nodebrew/current/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:~/work/appengine/go_appengine_sdk_darwin_amd64-1.7.7
 export PATH=$PATH:~/bin
