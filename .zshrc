@@ -16,7 +16,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
-# export ANDROID_NDK_ROOT=~/work/android-ndk-r6b
+export ANDROID_NDK_ROOT=~/android-ndk-r9b
 
 export SCALA_HOME=/opt/local/share/scala
 export PLAY_HOME=~/work/play-2.0.4
