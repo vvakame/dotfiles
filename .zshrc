@@ -5,7 +5,9 @@ compinit
 
 export LANG=ja_JP.UTF-8
 
-if [ -d ~/android-sdks ]; then
+if [ -d ~/android-sdk ]; then
+  export ANDROID_SDK_ROOT=~/android-sdk
+elif [ -d ~/android-sdks ]; then
   export ANDROID_SDK_ROOT=~/android-sdks
 elif [ -d ~/work/android-sdk-mac_x86 ]; then
   export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
@@ -24,7 +26,11 @@ export PLAY_HOME=~/work/play-2.0.4
 export DART_SDK=/Applications/dart/dart-sdk
 export GOROOT=~/work/bin/go
 
-export PHANTOMJS_BIN=/opt/local/bin/phantomjs
+if [ -s /opt/boxen/homebrew/bin/phantomjs ]; then
+  export PHANTOMJS_BIN=/opt/boxen/homebrew/bin/phantomjs
+elif [ -s /opt/local/bin/phantomjs ]; then
+  export PHANTOMJS_BIN=/opt/local/bin/phantomjs
+fi
 
 # setup gvm (Groovy)
 if [ -s ~/.gvm/bin/gvm-init.sh ]; then
