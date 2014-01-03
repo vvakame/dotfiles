@@ -23,3 +23,5 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
+[help]
+	autocorrect = 1
