@@ -47,7 +47,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 # android
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT
 # google
-export PATH=$PATH:~/work/gcutil/gcutil-1.8.3:~/work/gsutil
+export PATH=$PATH:~/google-cloud-sdk/bin
 # misc
 eval "$(rbenv init - zsh)"
 export PATH=$PATH:~/Library/Haskell/ghc-7.6.3/lib/ghc-mod-1.11.2/bin
