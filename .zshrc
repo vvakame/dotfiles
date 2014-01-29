@@ -13,6 +13,10 @@ elif [ -d ~/work/android-sdk-mac_x86 ]; then
   export ANDROID_SDK_ROOT=~/work/android-sdk-mac_x86
 fi
 
+if [ -f "$(which dvm)" ]; then
+  eval "$(dvm env)"
+fi
+
 # export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
