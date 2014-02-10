@@ -35,6 +35,8 @@ elif [ -s /opt/local/bin/phantomjs ]; then
   export PHANTOMJS_BIN=/opt/local/bin/phantomjs
 fi
 
+export DOCKER_HOST=localhost
+
 # setup gvm (Groovy)
 if [ -s ~/.gvm/bin/gvm-init.sh ]; then
   source ~/.gvm/bin/gvm-init.sh
