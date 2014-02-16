@@ -55,6 +55,7 @@ export PATH=$PATH:~/google-cloud-sdk/bin
 # misc
 eval "$(rbenv init - zsh)"
 export PATH=$PATH:~/Library/Haskell/ghc-7.6.3/lib/ghc-mod-1.11.2/bin
+export PATH=$PATH:$DART_SDK/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:~/work/appengine/go_appengine_sdk_darwin_amd64-1.7.7
 export PATH=$PATH:~/bin
