@@ -67,6 +67,13 @@ export PATH=$PATH:/usr/texbin
 
 export MANPATH=/opt/local/man:$MANPATH
 
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+export LESS='-R'
+
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 HISTFILE=~/.zsh_history
