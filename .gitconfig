@@ -6,6 +6,7 @@
 [core]
 	quotepath = false
 	excludesfile = /opt/boxen/config/git/gitignore
+	precomposeunicode = true
 [alias]
 	graph = log --graph --all --pretty=format:'%Cgreen%h%Creset %cn %s %Cred%d%Creset'
 
