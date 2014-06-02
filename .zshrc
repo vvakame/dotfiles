@@ -17,7 +17,6 @@ if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"
 fi
 
-# export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
@@ -28,9 +27,11 @@ export SCALA_HOME=/opt/local/share/scala
 export PLAY_HOME=~/work/play-2.0.4
 
 export DART_SDK=/Applications/dart/dart-sdk
-if [ -d ~/work/bin/go ]; then
-  export GOROOT=~/work/bin/go
-fi
+
+export GOROOT=~/google-cloud-sdk/platform/google_appengine/goroot
+export GOPATH=~/.go
+export APPENGINE_DEV_APPSERVER=~/google-cloud-sdk/platform/google_appengine/dev_appserver.py
+
 export NACL_SDK_ROOT=~/nacl_sdk/pepper_31
 
 if [ -s /opt/boxen/homebrew/bin/phantomjs ]; then
@@ -124,4 +125,5 @@ set_rprompt() {
 }
 
 set_rprompt
+
 
