@@ -19,6 +19,11 @@
 [push]
 	default = simple
 
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+
 [credential]
 helper = /opt/boxen/bin/boxen-git-credential
 
