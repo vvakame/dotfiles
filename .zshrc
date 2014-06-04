@@ -9,7 +9,7 @@ antigen use oh-my-zsh
 # Terminalでの入力に色がつく http://blog.glidenote.com/blog/2012/12/15/zsh-syntax-highlighting/
 antigen bundle zsh-users/zsh-syntax-highlighting
 # mvnで入力補完が効くようになる https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#mvn
-antigen mvn
+antigen bundle mvn
 
 antigen theme alanpeabody
 antigen apply
