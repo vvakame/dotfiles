@@ -11,8 +11,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # mvnで入力補完が効くようになる https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#mvn
 antigen mvn
 
-
-antigen theme robbyrussell
+antigen theme afowler
 antigen apply
 # antigen end
 
