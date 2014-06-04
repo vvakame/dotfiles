@@ -1,6 +1,14 @@
 autoload -U compinit
 compinit
 
+# antigen start
+source ~/src/dotfiles/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+antigen theme robbyrussell
+antigen apply
+# antigen end
+
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 export LANG=ja_JP.UTF-8
@@ -93,37 +101,9 @@ setopt hist_ignore_space
 
 autoload colors
 colors
-PROMPT="%{${fg[blue]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
-PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
-SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
-RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 
 # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
 alias pwdweb="python -m SimpleHTTPServer 8989" 
-
-set_rprompt() {
-    local user_color
-    if [ `whoami` = root ]; then
-        user_color=red
-    elif [ `hostname` = otto.local ]; then
-        user_color=blue
-    elif [ `hostname` = liesa.local ]; then
-        user_color=magenta
-    elif [ `hostname` = walter.local ]; then
-        user_color=green
-    elif [ `hostname` = pamela.local ]; then
-        user_color=magenta
-    elif [ `hostname` = ip21-pc.topgate.lan ]; then
-        user_color=green
-    elif [ `hostname` = vv-temp.local ]; then
-        user_color=green
-    fi
-    RPROMPT="%{${fg[$user_color]}%}[%~]%{${reset_color}%}"
-}
-
-set_rprompt
-
-
