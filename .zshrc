@@ -113,3 +113,6 @@ alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
 alias pwdweb="python -m SimpleHTTPServer 8989" 
+
+# added by travis gem
+[ -f /Users/vvakame/.travis/travis.sh ] && source /Users/vvakame/.travis/travis.sh
