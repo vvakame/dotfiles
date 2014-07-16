@@ -62,6 +62,10 @@ if [ -s ~/.gvm/bin/gvm-init.sh ]; then
 fi
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 
+if [ -s ~/google-cloud-sdk/completion.zsh.inc ]; then
+  source ~/google-cloud-sdk/completion.zsh.inc
+fi
+
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 # nvm より優先する
