@@ -47,3 +47,7 @@ brew cask install yorufukurou
 brew cask install kobito
 brew cask install onepassword
 brew cask install alfred
+
+brew cask install mactex
+brew cask install adobe-reader
+brew cask install libreoffice
