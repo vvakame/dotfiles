@@ -19,6 +19,8 @@ brew install emacs
 brew install go
 brew install phantomjs
 brew install sqlite
+brew install nodebrew
+brew install rbenv ruby-build
 
 brew install caskroom/cask/brew-cask
 
