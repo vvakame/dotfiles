@@ -67,7 +67,7 @@ if [ -s ~/google-cloud-sdk/completion.zsh.inc ]; then
 fi
 
 ## Path settings
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin/:/usr/local/bin/:$PATH
 # nvm より優先する
 export PATH=~/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
@@ -116,7 +116,7 @@ colors
 alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
-alias pwdweb="python -m SimpleHTTPServer 8989" 
+alias pwdweb="python -m SimpleHTTPServer 8989"
 
 # added by travis gem
 [ -f /Users/vvakame/.travis/travis.sh ] && source /Users/vvakame/.travis/travis.sh
