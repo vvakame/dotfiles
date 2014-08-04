@@ -33,7 +33,6 @@ brew cask install google-japanese-ime
 brew cask install sublime-text
 brew cask install coteditor
 brew cask install atom
-brew cask install sublime-text
 brew cask install google-chrome
 brew cask install firefox
 brew cask install sourcetree
