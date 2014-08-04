@@ -19,6 +19,8 @@ antigen apply
 
 export LANG=ja_JP.UTF-8
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 if [ -d ~/android-sdk ]; then
   export ANDROID_SDK_ROOT=~/android-sdk
 elif [ -d ~/android-sdks ]; then
