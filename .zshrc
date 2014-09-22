@@ -69,7 +69,7 @@ if [ -s ~/google-cloud-sdk/completion.zsh.inc ]; then
 fi
 
 ## Path settings
-export PATH=/opt/local/bin:/opt/local/sbin/:/usr/local/bin/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 # nvm より優先する
 export PATH=~/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
