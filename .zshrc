@@ -33,7 +33,7 @@ if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
