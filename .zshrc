@@ -122,3 +122,7 @@ alias pwdweb="python -m SimpleHTTPServer 8989"
 
 # added by travis gem
 [ -f /Users/vvakame/.travis/travis.sh ] && source /Users/vvakame/.travis/travis.sh
+
+# opam
+/Users/vvakame/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
