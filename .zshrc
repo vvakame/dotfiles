@@ -56,7 +56,7 @@ elif [ -s /opt/local/bin/phantomjs ]; then
   export PHANTOMJS_BIN=/opt/local/bin/phantomjs
 fi
 
-export DOCKER_HOST=tcp://localhost:4243
+$(boot2docker shellinit)
 
 # setup gvm (Groovy)
 if [ -s ~/.gvm/bin/gvm-init.sh ]; then
