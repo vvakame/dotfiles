@@ -78,9 +78,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_
 # google
 export PATH=$PATH:~/google-cloud-sdk/bin
 # misc
+export PATH=~/.cabal/bin:$PATH
 export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
 eval "$(rbenv init - zsh)"
-export PATH=$PATH:~/Library/Haskell/ghc-7.6.3/lib/ghc-mod-1.11.2/bin
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/texbin
 
