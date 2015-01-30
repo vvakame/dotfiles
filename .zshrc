@@ -49,7 +49,9 @@ export DART_SDK=/Applications/dart/dart-sdk
 export GOENVGOROOT=$HOME/.goenvs
 export GOENVTARGET=$HOME/work/bin
 export GOENVHOME=$HOME/work/goenv-workspace
-export GOPATH=~/.go
+export GOPATH=~/Dropbox/work/go-work
+export GOROOT=$GOENVGOROOT/default
+export PATH=$PATH:$GOROOT/bin:~/Dropbox/work/go-work/bin
 export APPENGINE_DEV_APPSERVER=~/google-cloud-sdk/platform/google_appengine/dev_appserver.py
 
 export NACL_SDK_ROOT=~/nacl_sdk/pepper_31
@@ -89,7 +91,6 @@ eval "$(rbenv init - zsh)"
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/work/bin
 export PATH=$PATH:/usr/texbin
-export PATH=$PATH:$GOPATH/bin
 
 export MANPATH=/opt/local/man:$MANPATH
 
