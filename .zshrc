@@ -44,12 +44,9 @@ export DART_SDK=/Applications/dart/dart-sdk
 
 # export GOROOT=~/google-cloud-sdk/platform/google_appengine/goroot
 # https://bitbucket.org/ymotongpoo/goenv
-export GOENVGOROOT=$HOME/.goenvs
-export GOENVTARGET=$HOME/work/bin
-export GOENVHOME=$HOME/work/goenv-workspace
 export GOPATH=~/Dropbox/work/go-work
-export GOROOT=$GOENVGOROOT/default
-export PATH=$PATH:$GOROOT/bin:~/Dropbox/work/go-work/bin
+export GOROOT=$(brew --prefix go)/libexec
+export PATH=$PATH:$GOPATH/bin
 export APPENGINE_DEV_APPSERVER=~/google-cloud-sdk/platform/google_appengine/dev_appserver.py
 
 export NACL_SDK_ROOT=~/nacl_sdk/pepper_31
