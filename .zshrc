@@ -15,8 +15,6 @@ antigen theme gnzh
 antigen apply
 # antigen end
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
 export LANG=ja_JP.UTF-8
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -56,10 +54,10 @@ export APPENGINE_DEV_APPSERVER=~/google-cloud-sdk/platform/google_appengine/dev_
 
 export NACL_SDK_ROOT=~/nacl_sdk/pepper_31
 
-if [ -s /opt/boxen/homebrew/bin/phantomjs ]; then
-  export PHANTOMJS_BIN=/opt/boxen/homebrew/bin/phantomjs
-elif [ -s /opt/local/bin/phantomjs ]; then
+if [ -s /opt/local/bin/phantomjs ]; then
   export PHANTOMJS_BIN=/opt/local/bin/phantomjs
+elif [ -s /usr/local/bin/phantomjs ]; then
+  export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 fi
 
 # boot2docker up するたびに変わるのでこの対応はあまりよくないかも
@@ -132,4 +130,4 @@ alias pwdweb="python -m SimpleHTTPServer 8989"
 [ -f /Users/vvakame/.travis/travis.sh ] && source /Users/vvakame/.travis/travis.sh
 
 # opam
-/Users/vvakame/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+[ -f /Users/vvakame/.opam/opam-init/init.zsh ] &&  /Users/vvakame/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
