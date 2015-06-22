@@ -24,9 +24,6 @@
 	show = diff-highlight | less
 	diff = diff-highlight | less
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
-
 [hub]
 protocol = https
 [help]
