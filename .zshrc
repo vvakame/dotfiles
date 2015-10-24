@@ -42,12 +42,12 @@ export PLAY_HOME=~/work/play-2.0.4
 
 export DART_SDK=/Applications/dart/dart-sdk
 
-# export GOROOT=~/google-cloud-sdk/platform/google_appengine/goroot
 # https://bitbucket.org/ymotongpoo/goenv
 export GOPATH=~/Dropbox/work/go-work
 export GOROOT=$(brew --prefix go)/libexec
 export PATH=$PATH:$GOPATH/bin
-export APPENGINE_DEV_APPSERVER=~/google-cloud-sdk/platform/google_appengine/dev_appserver.py
+export APPENGINE_DEV_APPSERVER=~/go_appengine/dev_appserver.py
+export PATH=$PATH:~/go_appengine
 
 export NACL_SDK_ROOT=~/nacl_sdk/pepper_31
 
