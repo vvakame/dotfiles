@@ -17,7 +17,7 @@ brew install jq
 
 brew install emacs
 brew install go
-brew install phantomjs
+# brew install phantomjs
 brew install sqlite
 brew install nodebrew
 brew install rbenv ruby-build
