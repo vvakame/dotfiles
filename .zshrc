@@ -19,7 +19,9 @@ export LANG=ja_JP.UTF-8
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-if [ -d ~/android-sdk ]; then
+if [ -d ~/Library/Android/sdk ]; then
+  export ANDROID_SDK_ROOT=~/Library/Android/sdk
+elif [ -d ~/android-sdk ]; then
   export ANDROID_SDK_ROOT=~/android-sdk
 elif [ -d ~/android-sdks ]; then
   export ANDROID_SDK_ROOT=~/android-sdks
