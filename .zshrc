@@ -66,6 +66,9 @@ if [ -s ~/.gvm/bin/gvm-init.sh ]; then
 fi
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 
+if [ -s ~/google-cloud-sdk/path.zsh.inc ]; then
+  source ~/google-cloud-sdk/path.zsh.inc
+fi
 if [ -s ~/google-cloud-sdk/completion.zsh.inc ]; then
   source ~/google-cloud-sdk/completion.zsh.inc
 fi
@@ -77,8 +80,6 @@ export PATH=~/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
 # android
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT
-# google
-export PATH=$PATH:~/google-cloud-sdk/bin
 # misc
 export PATH=~/.cabal/bin:$PATH
 export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
@@ -130,4 +131,3 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # opam
 [ -f /Users/vvakame/.opam/opam-init/init.zsh ] &&  /Users/vvakame/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
