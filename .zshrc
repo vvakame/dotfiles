@@ -59,8 +59,7 @@ elif [ -s /usr/local/bin/phantomjs ]; then
   export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 fi
 
-# boot2docker up するたびに変わるのでこの対応はあまりよくないかも
-# $(boot2docker shellinit)
+eval $(docker-machine env default)
 
 # setup gvm (Groovy)
 if [ -s ~/.gvm/bin/gvm-init.sh ]; then
