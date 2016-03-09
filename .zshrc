@@ -124,8 +124,6 @@ alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
 alias pwdweb="python -m SimpleHTTPServer 8989"
-# for Visual Studio Code https://code.visualstudio.com/Docs/setup
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # added by travis gem
 [ -f /Users/vvakame/.travis/travis.sh ] && source /Users/vvakame/.travis/travis.sh
