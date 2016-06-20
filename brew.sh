@@ -22,6 +22,8 @@ brew install sqlite
 brew install nodebrew
 brew install rbenv ruby-build
 
+exit 0
+
 brew install caskroom/cask/brew-cask
 
 # brew cask install android-studio
