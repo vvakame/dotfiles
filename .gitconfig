@@ -31,3 +31,5 @@ protocol = https
 
 [credential]
 	helper = osxkeychain
+[diff]
+	compactionHeuristic = true
