@@ -59,8 +59,6 @@ elif [ -s /usr/local/bin/phantomjs ]; then
   export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 fi
 
-eval $(docker-machine env default)
-
 # setup gvm (Groovy)
 if [ -s ~/.gvm/bin/gvm-init.sh ]; then
   source ~/.gvm/bin/gvm-init.sh
