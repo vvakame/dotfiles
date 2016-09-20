@@ -16,6 +16,7 @@ antigen apply
 # antigen end
 
 export LANG=ja_JP.UTF-8
+export EDITOR=vi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
