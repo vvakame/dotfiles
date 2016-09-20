@@ -86,6 +86,9 @@ eval "$(rbenv init - zsh)"
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/work/bin
 export PATH=$PATH:/usr/texbin
+if [ -f "$(which direnv)" ]; then
+  eval "$(direnv hook zsh)"
+fi
 
 export MANPATH=/opt/local/man:$MANPATH
 
