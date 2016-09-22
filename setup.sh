@@ -9,7 +9,6 @@ defaults write com.apple.dock autohide -bool Yes; killall Dock
 
 # ssh公開鍵をいろいろなところに配る
 # JDK 入れる
-# brew cask alfred link
 
 # iterm2でGeneral -> Preferences で Dropboxのsettingsフォルダのあそこ指定する
 
@@ -25,5 +24,4 @@ defaults write com.apple.dock autohide -bool Yes; killall Dock
 # gem install review
 # rbenv rehash
 
-# QuickRes
-# gumroad
+# QuickRes -> gumroad

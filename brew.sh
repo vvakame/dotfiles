@@ -14,13 +14,18 @@ brew install hub
 brew install ant
 brew install maven
 brew install jq
+brew install peco
 
 brew install emacs
 brew install go
-# brew install phantomjs
+brew install rust
+brew install phantomjs
 brew install sqlite
 brew install nodebrew
 brew install rbenv ruby-build
+brew install python3
+brew install direnv
+brew install redpen
 
 exit 0
 
