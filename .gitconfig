@@ -1,3 +1,6 @@
+[include]
+	path = .gitconfig.env
+
 [user]
 	name = vvakame
 	email = vvakame+dev@gmail.com
@@ -28,7 +31,7 @@
 [help]
 	autocorrect = 1
 
-[credential]
-	helper = osxkeychain
 [diff]
 	compactionHeuristic = true
+[credential]
+	helper = cache --timeout=3600
