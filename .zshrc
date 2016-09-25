@@ -22,7 +22,9 @@ export EDITOR=vi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+if [ `uname` = "Darwin" ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+fi
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 if [ -d $HOME/Library/Android/sdk ]; then
@@ -39,9 +41,11 @@ export ANDROID_HOME=$ANDROID_SDK_HOME
 export ANDROID_NDK_ROOT=$HOME/android-ndk-r9b
 
 # https://bitbucket.org/ymotongpoo/goenv
-export GOPATH=$HOME/Dropbox/work/go-work
-export GOROOT=$(brew --prefix go)/libexec
-export PATH=$PATH:$GOPATH/bin
+if [ `uname` = "Darwin" ]; then
+  export GOPATH=$HOME/Dropbox/work/go-work
+  export GOROOT=$(brew --prefix go)/libexec
+  export PATH=$PATH:$GOPATH/bin
+fi
 
 # GAE
 export APPENGINE_DEV_APPSERVER=$HOME/go_appengine/dev_appserver.py
@@ -65,8 +69,12 @@ export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT
 # misc
 export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
-eval "$(rbenv init - zsh)"
+if [ `uname` = "Darwin" ]; then
+  export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
+elif [ `uname` = "Linux" ]; then
+  export PATH=$PATH:/usr/share/doc/git/contrib/diff-highlight
+fi
+[ -f "$(which rbenv)" ] &&eval "$(rbenv init - zsh)"
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
 
 export MANPATH=/opt/local/man:$MANPATH
