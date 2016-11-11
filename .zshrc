@@ -74,8 +74,9 @@ if [ `uname` = "Darwin" ]; then
 elif [ `uname` = "Linux" ]; then
   export PATH=$PATH:/usr/share/doc/git/contrib/diff-highlight
 fi
-[ -f "$(which rbenv)" ] &&eval "$(rbenv init - zsh)"
+[ -f "$(which rbenv)" ] && eval "$(rbenv init - zsh)"
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
+[ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
 
 export MANPATH=/opt/local/man:$MANPATH
 
