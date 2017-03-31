@@ -77,6 +77,7 @@ fi
 [ -f "$(which rbenv)" ] && eval "$(rbenv init - zsh)"
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
 [ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
+# [ -s $HOME/work/emsdk_portable/emsdk_env.sh ] && source $HOME/work/emsdk_portable/emsdk_env.sh
 
 export MANPATH=/opt/local/man:$MANPATH
 
