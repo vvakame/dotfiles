@@ -79,6 +79,7 @@ fi
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
 [ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
 # [ -s $HOME/work/emsdk_portable/emsdk_env.sh ] && source $HOME/work/emsdk_portable/emsdk_env.sh
+[ -f "$(which ng)" ] && eval "$(ng completion --zsh)"
 
 export MANPATH=/opt/local/man:$MANPATH
 
