@@ -16,16 +16,25 @@ brew install maven
 brew install jq
 brew install peco
 
-brew install emacs
+# brew install emacs
 brew install go
-brew install rust
-brew install phantomjs
+# brew install rust
+# brew install phantomjs
 brew install sqlite
-brew install nodebrew
+# brew install nodebrew
 brew install rbenv ruby-build
 brew install python3
 brew install direnv
 brew install redpen
+
+brew install ffmpeg
+brew install google-protobuf
+brew install grpc
+brew install llvm
+brew install openssl
+brew install pandoc
+brew install readline
+brew install webp
 
 exit 0
 
