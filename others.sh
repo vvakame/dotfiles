@@ -22,7 +22,7 @@ wget -O $HOME/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels
 tar xvzf $HOME/google-cloud-sdk.tar.gz -C $HOME
 $HOME/google-cloud-sdk/install.sh --quiet
 gcloud components update
-gcloud install beta
+gcloud components install beta -q
 
 # node.js
 curl -L git.io/nodebrew | perl - setup
