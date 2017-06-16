@@ -28,8 +28,6 @@ brew install direnv
 brew install redpen
 
 brew install ffmpeg
-brew install google-protobuf
-brew install grpc
 brew install llvm
 brew install openssl
 brew install pandoc

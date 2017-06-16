@@ -1,3 +1,5 @@
+#!/bin/bash -eu
+
 ./ln.sh
 
 if [ `uname` = "Darwin" ]; then
