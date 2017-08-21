@@ -6,6 +6,7 @@ brew install the_silver_searcher
 brew install tree
 brew install curl
 brew install wget
+brew install colordiff
 brew install zsh
 brew install zsh-completions
 
