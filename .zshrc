@@ -49,8 +49,9 @@ if [ `uname` = "Darwin" ]; then
 fi
 
 # GAE
-export APPENGINE_DEV_APPSERVER=$HOME/go_appengine/dev_appserver.py
-export PATH=$PATH:$HOME/go_appengine
+# export APPENGINE_DEV_APPSERVER=$HOME/go_appengine/dev_appserver.py
+# export PATH=$PATH:$HOME/go_appengine
+export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
 if [ -s /opt/local/bin/phantomjs ]; then
   export PHANTOMJS_BIN=/opt/local/bin/phantomjs
