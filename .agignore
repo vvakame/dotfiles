@@ -1,0 +1,9 @@
+*~
+*.swp
+*.bak
+*.old
+.git
+.svn
+zsh-completions
+node_modules
+vendor

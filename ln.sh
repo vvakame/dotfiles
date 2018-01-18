@@ -10,3 +10,4 @@ elif [ `uname` = "Linux" ]; then
 fi
 ln -s $HOME/dotfiles/.emacs $HOME/
 # ln -s ~/src/dotfiles/.vimrc ~/
+ln -s $HOME/dotfiles/.agignore $HOME/
