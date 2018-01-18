@@ -33,6 +33,7 @@
 
 [diff]
 	compactionHeuristic = true
+	colorMoved = zebra
 [http]
 	cookiefile = /Users/vvakame/.gitcookies
 [filter "lfs"]
