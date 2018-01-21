@@ -3,6 +3,7 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew install the_silver_searcher
+brew install fd
 brew install tree
 brew install curl
 brew install wget
@@ -12,8 +13,8 @@ brew install zsh-completions
 
 brew install git
 brew install hub
-brew install ant
-brew install maven
+# brew install ant
+# brew install maven
 brew install jq
 brew install peco
 
@@ -52,7 +53,7 @@ brew cask install coteditor
 # brew cask install firefox
 brew cask install sourcetree
 # brew cask install trailer
-brew cask install virtualbox
+# brew cask install virtualbox
 
 brew cask install dropbox
 brew cask install evernote
