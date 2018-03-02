@@ -12,7 +12,7 @@ antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 # mvnで入力補完が効くようになる https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#mvn
-antigen bundle mvn
+# antigen bundle mvn
 
 antigen theme vvakame/dotfiles themes/vv-custom
 antigen apply
@@ -24,7 +24,7 @@ export EDITOR=vi
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 if [ `uname` = "Darwin" ]; then
-  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+  export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
@@ -50,7 +50,7 @@ fi
 
 # GAE
 # export APPENGINE_DEV_APPSERVER=$HOME/go_appengine/dev_appserver.py
-# export PATH=$PATH:$HOME/go_appengine
+export PATH=$PATH:$HOME/go_appengine
 export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
 if [ -s /opt/local/bin/phantomjs ]; then
