@@ -117,7 +117,8 @@ colors
 alias ls="ls -G"
 alias la="ls -laGF"
 alias emacs="open -a Emacs"
-alias pwdweb="python -m SimpleHTTPServer 8989"
+# alias pwdweb="python -m SimpleHTTPServer 8989"
+alias pwdweb="live-server --port=8989 --no-browser --cors --verbose"
 
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 [ -f $HOME/.opam/opam-init/init.zsh ] && $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
