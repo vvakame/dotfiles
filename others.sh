@@ -7,6 +7,7 @@ open https://hub.docker.com/editions/community/docker-ce-desktop-mac
 open https://www.tug.org/mactex/
 open https://atom.io/
 open https://code.visualstudio.com/
+open https://www.jetbrains.com/toolbox/
 open https://www.sketchapp.com/
 open https://1password.com/
 open https://discordapp.com/
