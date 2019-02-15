@@ -35,7 +35,6 @@ gcloud components install beta -q
 curl -L git.io/nodebrew | perl - setup
 nodebrew install-binary v11
 nodebrew use v11
-npm install -g typescript typescript-formatter yarn @angular/cli
 npm install -g typescript typescript-formatter yarn firebase-tools live-server @angular/cli
 
 # rustup
