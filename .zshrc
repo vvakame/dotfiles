@@ -55,12 +55,6 @@ fi
 export PATH=$PATH:$HOME/go_appengine
 export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
-if [ -s /opt/local/bin/phantomjs ]; then
-  export PHANTOMJS_BIN=/opt/local/bin/phantomjs
-elif [ -s /usr/local/bin/phantomjs ]; then
-  export PHANTOMJS_BIN=/usr/local/bin/phantomjs
-fi
-
 [ -s $HOME/google-cloud-sdk/path.zsh.inc ] && source $HOME/google-cloud-sdk/path.zsh.inc
 [ -s $HOME/google-cloud-sdk/completion.zsh.inc ] && source $HOME/google-cloud-sdk/completion.zsh.inc
 
@@ -121,7 +115,6 @@ alias emacs="open -a Emacs"
 # alias pwdweb="python -m SimpleHTTPServer 8989"
 alias pwdweb="live-server --port=8989 --no-browser --cors --verbose"
 
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 [ -f $HOME/.opam/opam-init/init.zsh ] && $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 if [ `uname` = "Darwin" ]; then
