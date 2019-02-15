@@ -3,9 +3,12 @@
 ./ln.sh
 
 if [ `uname` = "Darwin" ]; then
-  ./brew.sh
   # Macの設定
   defaults write com.apple.dock autohide -bool Yes; killall Dock
+
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew tap Homebrew/bundle
+  brew bundle install
 
   # ssh公開鍵をいろいろなところに配る
   # JDK 入れる
