@@ -60,6 +60,9 @@ export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
+# deno
+# curl -fL https://deno.land/x/install/install.sh | sh
+export PATH=$HOME/.deno/bin:$PATH
 # nvm より優先する
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
