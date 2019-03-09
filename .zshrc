@@ -43,9 +43,8 @@ export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 export ANDROID_HOME=$ANDROID_SDK_HOME
 export ANDROID_NDK_ROOT=$HOME/android-ndk-r9b
 
-# https://bitbucket.org/ymotongpoo/goenv
 if [ `uname` = "Darwin" ]; then
-  export GOPATH=$HOME/Dropbox/work/go-work
+  export GOPATH=$HOME/work/gopath
   export GOROOT=$(brew --prefix go)/libexec
   export PATH=$PATH:$GOPATH/bin
 fi
