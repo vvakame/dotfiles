@@ -9,6 +9,7 @@
 [core]
 	quotepath = false
 	precomposeunicode = true
+	excludesfile = /Users/vvakame/.gitignore_global
 [alias]
 	graph = log --graph --all --pretty=format:'%Cgreen%h%Creset %cn %s %Cred%d%Creset'
 
@@ -16,7 +17,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
 	default = simple
