@@ -25,6 +25,8 @@ export EDITOR=vi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
 if [ `uname` = "Darwin" ]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
