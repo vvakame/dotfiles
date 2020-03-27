@@ -38,8 +38,12 @@ elif which rbenv &> /dev/null; then # detect Simple Ruby Version Management
   rvm_ruby='%F{red}‹$(rbenv version | sed -e "s/ (set.*$//")›%f'
 fi
 local git_branch='$(git_prompt_info)'
+local kubectx
+if [[ -n "$ZSH_KUBECTL_PROMPT" ]]; then
+  kubectx='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+fi
 
-PROMPT="╭─${user_host} ${current_dir} ${git_branch}
+PROMPT="╭─${user_host} ${current_dir} ${git_branch}${kubectx}
 ╰─$PR_PROMPT "
 RPROMPT="${return_code}"
 
