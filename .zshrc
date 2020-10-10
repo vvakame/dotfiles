@@ -74,6 +74,8 @@ if [ `uname` = "Darwin" ]; then
   export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
 elif [ `uname` = "Linux" ]; then
   export PATH=$PATH:/usr/share/doc/git/contrib/diff-highlight
+  export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+  export PATH=$PATH:/mnt/c/Users/vvakame/AppData/Local/Programs/Microsoft\ VS\ Code/bin/
 fi
 [ -f "$(which rbenv)" ] && eval "$(rbenv init - zsh)"
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
