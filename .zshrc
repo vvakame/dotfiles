@@ -58,8 +58,6 @@ export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
 [ -s $HOME/google-cloud-sdk/path.zsh.inc ] && source $HOME/google-cloud-sdk/path.zsh.inc
 [ -s $HOME/google-cloud-sdk/completion.zsh.inc ] && source $HOME/google-cloud-sdk/completion.zsh.inc
-# https://issuetracker.google.com/issues/170125513
-export CLOUDSDK_PYTHON=$(brew --prefix python@3.8)/bin/python3
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
