@@ -8,6 +8,8 @@ if [ `uname` = "Darwin" ]; then
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   brew bundle
+  # brew bundle dump --force
+  # brew bundle cleanup --force
 
   # ssh公開鍵をいろいろなところに配る
   # JDK 入れる
