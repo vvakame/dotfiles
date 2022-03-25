@@ -82,6 +82,7 @@ fi
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
 [ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
 # [ -s $HOME/work/emsdk_portable/emsdk_env.sh ] && source $HOME/work/emsdk_portable/emsdk_env.sh
+[ -f $DOTFILES/work.zsh ] && source $DOTFILES/work.zsh
 
 export MANPATH=/opt/local/man:$MANPATH
 
