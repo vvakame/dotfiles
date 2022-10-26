@@ -59,6 +59,8 @@ export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
 [ -s $HOME/google-cloud-sdk/path.zsh.inc ] && source $HOME/google-cloud-sdk/path.zsh.inc
 [ -s $HOME/google-cloud-sdk/completion.zsh.inc ] && source $HOME/google-cloud-sdk/completion.zsh.inc
+# https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 ## Path settings
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
@@ -71,6 +73,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT
 # misc
 export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$PATH:$HOME/.foundry/bin
 if [ `uname` = "Darwin" ]; then
   export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
 elif [ `uname` = "Linux" ]; then
