@@ -33,19 +33,6 @@ if [ `uname` = "Darwin" ]; then
 fi
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
-if [ -d $HOME/Library/Android/sdk ]; then
-  export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-elif [ -d $HOME/android-sdk ]; then
-  export ANDROID_SDK_ROOT=$HOME/android-sdk
-elif [ -d $HOME/android-sdks ]; then
-  export ANDROID_SDK_ROOT=$HOME/android-sdks
-elif [ -d $HOME/work/android-sdk-mac_x86 ]; then
-  export ANDROID_SDK_ROOT=$HOME/work/android-sdk-mac_x86
-fi
-export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
-export ANDROID_HOME=$ANDROID_SDK_HOME
-export ANDROID_NDK_ROOT=$HOME/android-ndk-r9b
-
 if [ `uname` = "Darwin" ]; then
   export GOPATH=$HOME/work/gopath
   # export GOROOT=$(brew --prefix go)/libexec
@@ -69,8 +56,6 @@ export PATH=$HOME/work/bin:$PATH
 # nvm より優先する
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
-# android
-export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_NDK_ROOT
 # misc
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$PATH:$HOME/.foundry/bin
