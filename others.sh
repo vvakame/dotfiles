@@ -5,7 +5,6 @@ open https://www.alfredapp.com/
 open http://www.oracle.com/technetwork/java/javase/downloads/index.html
 open https://hub.docker.com/editions/community/docker-ce-desktop-mac
 open https://www.tug.org/mactex/
-open https://atom.io/
 open https://code.visualstudio.com/
 open https://www.jetbrains.com/toolbox/
 open https://www.sketchapp.com/
