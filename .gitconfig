@@ -13,6 +13,7 @@
 	excludesfile = /Users/vvakame/.gitignore_global
 [alias]
 	graph = log --graph --all --pretty=format:'%Cgreen%h%Creset %cn %s %Cred%d%Creset'
+	cleanup = ! git branch -d `git branch --merged | grep -v '^*\\|main\\|master'`
 
 [push]
 	default = simple
