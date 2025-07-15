@@ -26,7 +26,7 @@ export EDITOR=vi
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 [ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+# export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
 if [ `uname` = "Darwin" ]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
@@ -41,8 +41,8 @@ fi
 
 # GAE
 # export APPENGINE_DEV_APPSERVER=$HOME/go_appengine/dev_appserver.py
-export PATH=$PATH:$HOME/go_appengine
-export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
+# export PATH=$PATH:$HOME/go_appengine
+# export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine
 
 [ -s $HOME/google-cloud-sdk/path.zsh.inc ] && source $HOME/google-cloud-sdk/path.zsh.inc
 [ -s $HOME/google-cloud-sdk/completion.zsh.inc ] && source $HOME/google-cloud-sdk/completion.zsh.inc
@@ -57,8 +57,8 @@ export PATH=$HOME/work/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$PATH:$JAVA_HOME/bin
 # misc
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$PATH:$HOME/.foundry/bin
+# export PATH=$HOME/.cabal/bin:$PATH
+# export PATH=$PATH:$HOME/.foundry/bin
 if [ `uname` = "Darwin" ]; then
   export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
 elif [ `uname` = "Linux" ]; then
@@ -66,7 +66,7 @@ elif [ `uname` = "Linux" ]; then
   export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
   export PATH=$PATH:/mnt/c/Users/vvakame/AppData/Local/Programs/Microsoft\ VS\ Code/bin/
 fi
-[ -f "$(which rbenv)" ] && eval "$(rbenv init - zsh)"
+# [ -f "$(which rbenv)" ] && eval "$(rbenv init - zsh)"
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
 [ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
 # [ -s $HOME/work/emsdk_portable/emsdk_env.sh ] && source $HOME/work/emsdk_portable/emsdk_env.sh
@@ -75,7 +75,7 @@ fi
 export MANPATH=/opt/local/man:$MANPATH
 
 export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH="$WASMTIME_HOME/bin:$PATH"
+# export PATH="$WASMTIME_HOME/bin:$PATH"
 
 
 if [ -f "$(which colordiff)" ]; then
