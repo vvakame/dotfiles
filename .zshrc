@@ -59,8 +59,9 @@ export PATH=$PATH:$JAVA_HOME/bin
 # misc
 # export PATH=$HOME/.cabal/bin:$PATH
 # export PATH=$PATH:$HOME/.foundry/bin
+export PATH="$HOME/.local/bin:$PATH"
 if [ `uname` = "Darwin" ]; then
-  export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
+  # export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
 elif [ `uname` = "Linux" ]; then
   export PATH=$PATH:/usr/share/doc/git/contrib/diff-highlight
   export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
