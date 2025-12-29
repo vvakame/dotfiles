@@ -31,7 +31,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if [ `uname` = "Darwin" ]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
-export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 if [ `uname` = "Darwin" ]; then
   export GOPATH=$HOME/work/gopath
@@ -71,6 +70,10 @@ fi
 [ -f "$(which direnv)" ] && eval "$(direnv hook zsh)"
 [ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
 # [ -s $HOME/work/emsdk_portable/emsdk_env.sh ] && source $HOME/work/emsdk_portable/emsdk_env.sh
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
+export PATH="$PATH:$HOME/.local/bin"
+
 [ -f $DOTFILES/work.zsh ] && source $DOTFILES/work.zsh
 
 export MANPATH=/opt/local/man:$MANPATH
