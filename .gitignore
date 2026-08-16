@@ -4,3 +4,9 @@ work.zsh
 
 # このリポジトリを Claude Code で開いたときのローカル設定 (マシン固有)
 .claude/settings.local.json
+
+# ~/.claude 配下に symlink する Claude Code 設定。settings.common.json (共通)
+# と settings.machine.json (マシン固有) を merge した生成物・マシン固有の
+# 上書きファイルなので、いずれも管理対象外にする
+claude/.claude/settings.json
+claude/.claude/settings.machine.json
