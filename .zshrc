@@ -71,6 +71,8 @@ fi
 # [ -s $HOME/work/emsdk_portable/emsdk_env.sh ] && source $HOME/work/emsdk_portable/emsdk_env.sh
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
+[ -f "$(which mise)" ] && eval "$(mise activate)"
+
 export PATH="$PATH:$HOME/.local/bin"
 
 [ -f $DOTFILES/work.zsh ] && source $DOTFILES/work.zsh
