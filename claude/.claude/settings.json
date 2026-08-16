@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "ask": ["Bash(git add *)", "Bash(git commit *)"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": ["docker *"],
+    "filesystem": {
+      "allowRead": ["~/work/gopath/pkg/mod"],
+      "allowWrite": ["/tmp", "/private/tmp"],
+      "denyWrite": ["/etc", "/usr/local/bin"]
+    },
+    "credentials": {
+      "files": [
+        { "path": "~/.config/gcloud", "mode": "deny" },
+        { "path": "~/.ssh", "mode": "deny" }
+      ],
+      "envVars": []
+    },
+    "network": {
+      "allowAllUnixSockets": false,
+      "allowUnixSockets": [
+        "/var/run/docker.sock",
+        "~/.gnupg/S.gpg-agent",
+        "~/.gnupg/S.keyboxd"
+      ],
+      "allowedDomains": ["code.claude.com", "api.github.com"],
+      "deniedDomains": [],
+      "allowLocalBinding": true
+    }
+  }
+}

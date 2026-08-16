@@ -1,3 +1,6 @@
 work.zsh
 
 .DS_Store
+
+# このリポジトリを Claude Code で開いたときのローカル設定 (マシン固有)
+.claude/settings.local.json
