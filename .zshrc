@@ -82,6 +82,7 @@ export MANPATH=/opt/local/man:$MANPATH
 export WASMTIME_HOME="$HOME/.wasmtime"
 # export PATH="$WASMTIME_HOME/bin:$PATH"
 
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 if [ -f "$(which colordiff)" ]; then
   alias diff='colordiff -u'
