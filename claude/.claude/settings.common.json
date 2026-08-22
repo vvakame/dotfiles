@@ -21,20 +21,47 @@
       }
     ]
   },
+  "env": { "SSL_CERT_FILE": "/etc/ssl/cert.pem" },
   "sandbox": {
     "enabled": true,
     "failIfUnavailable": true,
     "allowUnsandboxedCommands": false,
-    "excludedCommands": ["docker *"],
+    "excludedCommands": [
+      "fork *",
+      "docker *",
+      "gh *",
+      "mise ls-remote *",
+      "mise outdated*",
+      "mise install *",
+      "mise upgrade *"
+    ],
     "filesystem": {
-      "allowRead": ["~/work/gopath/pkg/mod"],
-      "allowWrite": ["/tmp", "/private/tmp"],
-      "denyWrite": ["/etc", "/usr/local/bin"]
+      "allowWrite": [
+        "/tmp",
+        "/private/tmp",
+        "~/work/gopath/pkg/mod",
+        "~/work/gopath/pkg/sumdb",
+        "~/Library/Caches/go-build",
+        "~/Library/Caches/mise",
+        "~/Library/Caches/golangci-lint",
+        "~/.npm/_logs",
+        "~/.npm/_cacache",
+        "~/.local/state/mise/task-sources"
+      ],
+      "denyWrite": ["/etc", "/usr/local/bin"],
+      "denyRead": [
+        "~/.ssh",
+        "~/.config/gh",
+        "~/.netrc",
+        "~/.gnupg/private-keys-v1.d",
+        "~/.docker"
+      ]
     },
     "credentials": {
       "files": [
         { "path": "~/.config/gcloud", "mode": "deny" },
-        { "path": "~/.ssh", "mode": "deny" }
+        { "path": "~/.ssh", "mode": "deny" },
+        { "path": "~/.npmrc", "mode": "deny" }
       ],
       "envVars": []
     },
@@ -42,10 +69,20 @@
       "allowAllUnixSockets": false,
       "allowUnixSockets": [
         "/var/run/docker.sock",
+        "~/.orbstack/run/docker.sock",
         "~/.gnupg/S.gpg-agent",
         "~/.gnupg/S.keyboxd"
       ],
-      "allowedDomains": ["code.claude.com", "api.github.com"],
+      "allowedDomains": [
+        "code.claude.com",
+        "api.github.com",
+        "github.com",
+        "proxy.golang.org",
+        "sum.golang.org",
+        "mise-versions.jdx.dev",
+        "registry.npmjs.org",
+        "nodejs.org"
+      ],
       "deniedDomains": [],
       "allowLocalBinding": true
     }

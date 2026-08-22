@@ -72,6 +72,10 @@ fi
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 [ -f "$(which mise)" ] && eval "$(mise activate)"
+# Claude Code の sandbox 内からは gpg-agent を起動できない (起動には ~/.gnupg への
+# 書き込みが要るため)。ソケットに繋ぐことは許可されているので、外側で起こしておく。
+# 既に動いていれば no-op。
+[ -f "$(which gpgconf)" ] && gpgconf --launch gpg-agent 2>/dev/null
 
 export PATH="$PATH:$HOME/.local/bin"
 
