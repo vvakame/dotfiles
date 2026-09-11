@@ -1,7 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
-    "ask": ["Bash(git add *)", "Bash(git commit *)", "Bash(git push *)"]
+    "ask": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(gh issue create *)",
+      "Bash(gh issue edit *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr edit *)"
+    ]
   },
   "statusLine": {
     "command": "bash ~/.claude/statusline-command.sh",
@@ -21,7 +29,7 @@
       }
     ]
   },
-  "env": { "SSL_CERT_FILE": "/etc/ssl/cert.pem" },
+  "env": { "SSL_CERT_FILE": "/etc/ssl/cert.pem", "NODE_USE_ENV_PROXY": "1" },
   "sandbox": {
     "enabled": true,
     "failIfUnavailable": true,
@@ -30,6 +38,7 @@
       "fork *",
       "docker *",
       "gh *",
+      "pinact *",
       "mise ls-remote *",
       "mise outdated*",
       "mise install *",
@@ -44,11 +53,12 @@
         "~/Library/Caches/go-build",
         "~/Library/Caches/mise",
         "~/Library/Caches/golangci-lint",
+        "~/Library/Caches/pnpm",
         "~/.npm/_logs",
         "~/.npm/_cacache",
-        "~/.local/state/mise/task-sources"
+        "~/.local/state/mise"
       ],
-      "denyWrite": ["/etc", "/usr/local/bin"],
+      "denyWrite": ["/etc", "/usr/local/bin", "~/Library/Caches/pnpm/dlx"],
       "denyRead": [
         "~/.ssh",
         "~/.config/gh",
