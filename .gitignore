@@ -10,3 +10,7 @@ work.zsh
 # 上書きファイルなので、いずれも管理対象外にする
 claude/.claude/settings.json
 claude/.claude/settings.machine.json
+
+# Claude アカウントからバックグラウンドで同期されてくる Anthropic 配布のスキル。
+# 同期のたびに実体が上書きされるので、リポジトリで管理しても意味がない
+claude/.claude/skills/synced/
