@@ -5,11 +5,16 @@ work.zsh
 # このリポジトリを Claude Code で開いたときのローカル設定 (マシン固有)
 .claude/settings.local.json
 
-# ~/.claude 配下に symlink する Claude Code 設定。settings.common.json (共通)
-# と settings.machine.json (マシン固有) を merge した生成物・マシン固有の
-# 上書きファイルなので、いずれも管理対象外にする
+# ~/.claude 配下に symlink する Claude Code の設定と共通指示。*.common.* (共通)
+# と *.machine.* (マシン固有) を apply-settings.sh で合成した生成物・マシン固有
+# の上書きファイルなので、いずれも管理対象外にする。
+# このリポジトリは公開なので、プライベートリポジトリ名を含む記述は共通側に
+# 置けない。マシン固有側に寄せる。
 claude/.claude/settings.json
 claude/.claude/settings.machine.json
+
+claude/.claude/CLAUDE.md
+claude/.claude/CLAUDE.machine.md
 
 # Claude アカウントからバックグラウンドで同期されてくる Anthropic 配布のスキル。
 # 同期のたびに実体が上書きされるので、リポジトリで管理しても意味がない

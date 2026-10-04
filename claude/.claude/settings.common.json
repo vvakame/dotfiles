@@ -10,7 +10,8 @@
       "Bash(gh issue edit *)",
       "Bash(gh pr create *)",
       "Bash(gh pr edit *)"
-    ]
+    ],
+    "allow": ["Bash(gh api -X GET *)"]
   },
   "statusLine": {
     "command": "bash ~/.claude/statusline-command.sh",
@@ -36,6 +37,7 @@
     "failIfUnavailable": true,
     "allowUnsandboxedCommands": true,
     "excludedCommands": [
+      "pbcopy *",
       "fork *",
       "docker *",
       "gh *",
@@ -57,7 +59,8 @@
         "~/Library/Caches/pnpm",
         "~/.npm/_logs",
         "~/.npm/_cacache",
-        "~/.local/state/mise"
+        "~/.local/state/mise",
+        "~/.local/share/aquaproj-aqua/metadata"
       ],
       "denyWrite": ["/etc", "/usr/local/bin", "~/Library/Caches/pnpm/dlx"],
       "denyRead": [
