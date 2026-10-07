@@ -1,0 +1,19 @@
+onboarding = false
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+# agent_panel_sort = "spaces"
+agent_panel_sort = "priority"
+
+[keys]
+prefix = "ctrl+b"
+switch_tab = ["prefix+1..9", "ctrl+1..9"]
+workspace_picker = ["prefix+w", "ctrl+w"]
+
+[session]
+resume_agents_on_restore = true
+
+[experimental]
+pane_history = true

@@ -27,3 +27,12 @@ for f in CLAUDE.md settings.json statusline-command.sh agents commands hooks ski
     ln -s $HOME/dotfiles/claude/.claude/$f $HOME/.claude/
   fi
 done
+
+# herdr
+# config.toml は UI とキーバインドの設定だけで認証情報を持たないため、共通/
+# マシン固有に分けず実体をそのまま追跡する。同じディレクトリに session 履歴や
+# ソケットが同居するので、ディレクトリごとではなくファイル単位で貼る。
+mkdir -p $HOME/.config/herdr
+if [ -e $HOME/dotfiles/herdr/config.toml ]; then
+  ln -s $HOME/dotfiles/herdr/config.toml $HOME/.config/herdr/
+fi
