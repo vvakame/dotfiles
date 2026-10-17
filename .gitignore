@@ -19,3 +19,4 @@ claude/.claude/CLAUDE.machine.md
 # Claude アカウントからバックグラウンドで同期されてくる Anthropic 配布のスキル。
 # 同期のたびに実体が上書きされるので、リポジトリで管理しても意味がない
 claude/.claude/skills/synced/
+claude/.claude/skills/.trash/

@@ -42,10 +42,15 @@
       "docker *",
       "gh *",
       "pinact *",
+      "kubectl logs *",
+      "kubectl get *",
       "mise ls-remote *",
       "mise outdated*",
       "mise install *",
-      "mise upgrade *"
+      "mise upgrade *",
+      "herdr workspace list *",
+      "herdr workspace get *",
+      "herdr workspace rename *"
     ],
     "filesystem": {
       "allowWrite": [
