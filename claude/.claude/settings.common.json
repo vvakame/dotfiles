@@ -96,6 +96,7 @@
       "allowedDomains": [
         "code.claude.com",
         "api.github.com",
+        "token.actions.githubusercontent.com",
         "github.com",
         "proxy.golang.org",
         "sum.golang.org",
