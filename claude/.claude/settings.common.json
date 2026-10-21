@@ -3,13 +3,14 @@
   "permissions": {
     "ask": [
       "Bash(dangerouslyDisableSandbox:true)",
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(git push *)",
+      "Bash(git push --force:*)",
       "Bash(gh issue create *)",
       "Bash(gh issue edit *)",
       "Bash(gh pr create *)",
-      "Bash(gh pr edit *)"
+      "Bash(gh pr edit *)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr ready:*)",
+      "Bash(gh release create:*)"
     ],
     "allow": ["Bash(gh api -X GET *)"]
   },
