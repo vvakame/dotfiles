@@ -193,6 +193,24 @@ for i in 1; do gh auth status; done # 除外されない (SANDBOX_RUNTIME=1) →
 
 **除外対象のコマンドをループで回さない。** 複数対象を処理したいなら呼び出しを分ける。「断続的に失敗する」ように見えて誤診しやすい。
 
+**2026-10-21 の再計測では、`;` 区切りも除外されなくなっていた。** `gh auth status` の成否で判定した結果:
+
+| 形 | 結果 |
+|---|---|
+| `gh auth status` | 除外される |
+| `gh auth status 2>&1` | 除外される |
+| `cd <dir> && gh auth status` | 除外される |
+| `gh auth status \| head -1` | 除外されない |
+| `gh auth status; true` | 除外されない |
+| `gh auth status && git status` | 除外されない |
+| `gh auth status > file` | 除外されない |
+| `cd <dir>` 改行 `gh auth status` | 除外されない |
+| `GH_PAGER=cat gh auth status` | 除外されない |
+
+挙動は仕様として文書化されておらず、時期やセッションで変わる。上の表を前提にせず、迷ったら計測し直す。
+
+**迂回の大半は拒否の直後ではなかった。** 2026-10-21 に直近30日のセッションログ(173セッション)を集計した結果、`dangerouslyDisableSandbox: true` は984回あった。うち468回は迂回の直後に続けて迂回したもの。残り516回の起点のうち、直前のコマンドが sandbox の拒否を受けていたのは86回だけだった。308回は「セッション内の別のコマンドが以前に拒否された」後の先回りの迂回だった。除外コマンドを落ちる形で書いた失敗は、素の形では1件もなかった。対策は CLAUDE.md の常駐指示に置いている。
+
 ### 除外対象を含むと呼び出し全体が外に出る(セキュリティ上の穴)
 
 除外対象を1つ含めるだけで**シェルごと**サンドボックス外に出るため、連結したコマンドもすべて外で走る。実測:
@@ -204,6 +222,8 @@ docker version >/dev/null; ls ~/.ssh
 ```
 
 **`denyRead` も `credentials.files` も `allowWrite` も `allowedDomains` も、この経路では効かない。** つまり `excludedCommands` の各エントリが脱出口になる。[#40831](https://github.com/anthropics/claude-code/issues/40831) が同じ挙動を報告している(Closed as not planned)。
+
+2026-10-21 時点では、除外対象以外のコマンドと連結すると、除外対象のほうも sandbox 内で動いた(上の表)。この穴は塞がった可能性があるが、`docker version >/dev/null; ls ~/.ssh` での再計測はしていない。
 
 **現状これを緩和しているのは権限モードだけ。** 全 Bash コマンドに承認プロンプトが出るなら、`docker version; cat ~/.ssh/id_rsa` はその文字列のまま人間に見える。**`autoAllowBashIfSandboxed: true` や auto / bypassPermissions に切り替えるなら、`excludedCommands` を空にできないか先に検討する。**
 
