@@ -2,6 +2,9 @@ work.zsh
 
 .DS_Store
 
+# ローカルの Wiki ディレクトリを無視する
+/local-wiki/
+
 # このリポジトリを Claude Code で開いたときのローカル設定 (マシン固有)
 .claude/settings.local.json
 

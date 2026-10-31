@@ -57,6 +57,7 @@
       "allowWrite": [
         "/tmp",
         "/private/tmp",
+        "~/dotfiles/local-wiki",
         "~/work/gopath/pkg/mod",
         "~/work/gopath/pkg/sumdb",
         "~/Library/Caches/go-build",

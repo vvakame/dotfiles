@@ -41,3 +41,7 @@ git commit、push、Draft PR の作成までは、指示がなくても作業の
 PRを作成するときは必ず Draft で作成してください。
 Draft から Ready for review への変更は人間が行います。これをもって人間によるレビューの完了とします。
 そのため `gh pr ready` は実行しないでください。レビューを依頼できる状態になったと判断した場合、その旨を伝えるに留めてください。
+
+---
+
+local-wiki の使い方は how-to-use-local-wiki スキルを参照してください。
