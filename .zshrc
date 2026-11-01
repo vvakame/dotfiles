@@ -14,9 +14,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 # mvnで入力補完が効くようになる https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#mvn
 # antigen bundle mvn
-antigen bundle z
 
-antigen theme vvakame/dotfiles themes/vv-custom
+# dotfiles は必ず手元にあるので、GitHub から clone せずその場のテーマを読む
+antigen theme $DOTFILES themes/vv-custom --no-local-clone
 antigen apply
 
 ### Environment Variables
