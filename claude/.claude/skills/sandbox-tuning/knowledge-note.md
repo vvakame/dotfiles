@@ -298,7 +298,7 @@ env -u GIT_CONFIG_PARAMETERS git clone ... p2                          → EXIT=
 
 `http_proxy` / `https_proxy` は `GIT_` で始まらないため素通りしており、**プロキシ変数の欠落ではない**。両者は同じ exit 128 になるがメッセージが異なる(前者は `Proxy CONNECT aborted` / `Connection reset by peer`、後者は `Could not resolve host`)。golangci-lint が git の stderr を握り潰すため、メッセージでは切り分けられない。
 
-当面はユーザーがターミナルで実行する。upstream には許可リストへの `GIT_CONFIG_PARAMETERS` 追加を提案する(`GIT_CONFIG_COUNT` / `GIT_CONFIG_KEY_*` / `GIT_HTTP_PROXY_AUTHMETHOD` は既に通っているので、単純な漏れに見える)。
+**同じ設定を許可リストに入っている `GIT_HTTP_PROXY_AUTHMETHOD=basic` で渡し直せば、sandbox 内で通る**(2026-09-05 実測)。リンク段階で `dsymutil` → `cc` が `/var/folders/...` に書けず失敗するが、`GOFLAGS=-ldflags=-w` で DWARF を止めれば dsymutil は呼ばれない。upstream には許可リストへの `GIT_CONFIG_PARAMETERS` 追加を提案する(`GIT_CONFIG_COUNT` / `GIT_CONFIG_KEY_*` / `GIT_HTTP_PROXY_AUTHMETHOD` は既に通っているので、単純な漏れに見える)。
 
 ### 既知の不整合
 
@@ -361,7 +361,7 @@ Merge with strategy ort failed.
 | `gh` と `mise` は excludedCommands。環境変数では直せない | 2026-08-23 | `SSL_CERT_FILE` が効かないことを実測(gh は Go 製だが効かない) | 上と同じ / 各ツールが環境変数を見るようになる |
 | `excludedCommands` は最小限。`mise run` は含めない | 2026-08-23 | 除外対象を1つでも含む呼び出しは**全体が**サンドボックス外に出る(docker と git で実測)。挙動の報告として [claude-code #22620](https://github.com/anthropics/claude-code/issues/22620) | 除外がコマンド単位で厳密に適用されるようになる / 子プロセスにも継承されるようになる |
 | `~/.config/gcloud` は開けない | 2026-08-23 | ADC は Google アカウントのリフレッシュトークン。ダミー ADC の回避策があり、テストは通せる | ダミー ADC が効かなくなる / gcloud が設定と認証情報を別ディレクトリに分ける |
-| custom-gcl のビルドは外のターミナル | 2026-08-23 | golangci-lint の [#6515](https://github.com/golangci/golangci-lint/pull/6515) が `GIT_CONFIG_PARAMETERS` を落とす。設定では直せない | upstream が許可リストに追加する / Claude Code が `GIT_CONFIG_COUNT` 形式に切り替える |
+| custom-gcl のビルドは `GIT_HTTP_PROXY_AUTHMETHOD=basic` と `GOFLAGS=-ldflags=-w` を付けて sandbox 内で | 2026-09-05 | golangci-lint の [#6515](https://github.com/golangci/golangci-lint/pull/6515) が `GIT_CONFIG_PARAMETERS` を落とす。設定では直せないが、許可リストにある変数で渡し直せる | upstream が許可リストに追加する / Claude Code が `GIT_CONFIG_COUNT` 形式に切り替える |
 | `~/.npm` と `~/Library/Caches` は親ごと開けない | 2026-08-22 | 無関係なツールのデータが同居する(ユーザーの明示的な方針) | 方針変更 |
 | `/add-dir` 先を allowWrite に足さない。そのプロジェクトで別セッションを開いて作業を依頼する | 2026-08-29 | サンドボックスは**各セッション自身の cwd** に書き込みを許可するので、セッションを分ければ設定変更なしで解決する。**判断当時の理由(「`/add-dir` は仕様上サンドボックスに反映されない」)は誤り**だった。[公式](https://code.claude.com/docs/en/sandboxing#filesystem-isolation)は `--add-dir` / `/add-dir` 先も書けると明記しており、実測の BLOCKED はバグの可能性がある(設定キー `additionalDirectories` と混同していた)。結論は変えないが、根拠が違う | 実測で書けるようになる(バグが直る) / セッションを分ける手間が積み重なる |
 | pnpm のストア(`~/Library/pnpm/store`)を開けない | 2026-08-29 | リポジトリ直下に `.pnpm-store/` ができるのは [pnpm#13525](https://github.com/pnpm/pnpm/issues/13525) のバグで、**サンドボックス側の問題ではない**。修正は破壊的変更のため **v12 のみ**(メンテナ確認済み。v11 に上げても直らないことを実測)。当面は `pnpm_config_store_dir` を明示すればホームストアを読み取り専用のまま使える(`--frozen-store`) | pnpm v12 が出る / `storeDir` 明示で回らない事情が出る |

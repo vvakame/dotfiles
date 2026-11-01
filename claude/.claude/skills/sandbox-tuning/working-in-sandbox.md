@@ -34,10 +34,20 @@ sandbox 外での実行(`dangerouslyDisableSandbox: true`)は許容されてい�
 | `git push -u` / `--set-upstream` が `.git/config` を書けず失敗 | `git push origin <branch>`。`gh pr create` に upstream の設定は要らない |
 | `mise exec` / `mise run` の自動インストールが失敗 | 先に `mise install` を素の形で実行する |
 | `ps` / `pkill` / `killall` がプロセス一覧を取れず失敗 | `lsof -ti :<port>` で PID を引き、`kill <pid>` |
+| テストが `could not find default credentials` で落ちる(エミュレータ相手で、クライアントを作れれば足りる) | ダミー ADC を scratchpad に置き、`GOOGLE_APPLICATION_CREDENTIALS` で指す。形式は `authorized_user`(下記)。テストを sandbox 外で走らせない |
+| `golangci-lint custom` の内部の `git clone` が exit 128 / リンクで dsymutil が失敗 | `GIT_HTTP_PROXY_AUTHMETHOD=basic` と `GOFLAGS=-ldflags=-w` を付ける。dsymutil のエラーが出ても終了コード 0 なら成功 |
+
+ダミー ADC:
+
+```json
+{"type":"authorized_user","client_id":"fake-client-id.apps.googleusercontent.com","client_secret":"fake-client-secret","refresh_token":"fake-refresh-token"}
+```
+
+`service_account` 形式は、秘密鍵の PEM を構築時にパースするので通らない。`$TMPDIR` に置くと長いセッションの途中で消えることがある。
 
 ## 迂回が正当なもの
 
 sandbox が意図して塞いでいるもの。迂回するのは必要なコマンドだけに絞る。
 
-- gcloud の認証情報(ADC など)が要るコマンド
-- `git worktree add` など、`.vscode/` や `.mcp.json` のような保護されたファイルを作るコマンド
+- 本物の gcloud 認証情報が要るコマンド(本番の Cloud Logging を読む、など)。ダミー ADC で済むテストは含めない
+- `git worktree add` / `remove`、`git branch -D` など、保護されたパス(`.git/config`、`.vscode/`、`.mcp.json`)に書くコマンド。`.git/config` に書くだけの `git push -u` は、上の表の書き方で避ける
