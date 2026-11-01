@@ -32,6 +32,3 @@ if [ `uname` = "Darwin" ]; then
 elif [ `uname` = "Linux" ]; then
   ./apt-get.sh
 fi
-
-git submodule init
-git submodule update

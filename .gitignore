@@ -23,6 +23,3 @@ claude/.claude/CLAUDE.machine.md
 # 同期のたびに実体が上書きされるので、リポジトリで管理しても意味がない
 claude/.claude/skills/synced/
 claude/.claude/skills/.trash/
-
-# antigen がテーマを読み込むたびに隣へ生成する互換用のコピー
-*.antigen-compat

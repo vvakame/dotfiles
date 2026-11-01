@@ -1,0 +1,12 @@
+# antidote が読むプラグインの一覧。書き方は https://antidote.sh/
+
+# oh-my-zsh のプラグインが依存するものを用意する。必ず先頭に置く
+getantidote/use-omz
+# 補完・履歴・キーバインドの既定値と、テーマが使う git_prompt_info
+ohmyzsh/ohmyzsh path:lib
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+
+# dotfiles は必ず手元にあるので、その場のテーマを読む
+$DOTFILES/themes/vv-custom.zsh-theme

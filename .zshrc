@@ -1,26 +1,18 @@
 # Homebrew の補完 (site-functions) を fpath に入れてから補完を初期化する
 [ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -s /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 autoload -U compinit
 compinit
 
 export DOTFILES=$HOME/dotfiles
 
-### antigen
-source $DOTFILES/antigen/antigen.zsh
-
-antigen use oh-my-zsh
-# antigen update
-
-# Terminalでの入力に色がつく http://blog.glidenote.com/blog/2012/12/15/zsh-syntax-highlighting/
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-# mvnで入力補完が効くようになる https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#mvn
-# antigen bundle mvn
-
-# dotfiles は必ず手元にあるので、GitHub から clone せずその場のテーマを読む
-antigen theme $DOTFILES themes/vv-custom --no-local-clone
-antigen apply
+### antidote
+# プラグインの一覧は .zsh_plugins.txt。一覧が変わったときだけ ~/.zsh_plugins.zsh を作り直す
+if [ -n "$HOMEBREW_PREFIX" ] && [ -f "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh" ]; then
+  source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
+  antidote load $DOTFILES/.zsh_plugins.txt $HOME/.zsh_plugins.zsh
+fi
 
 ### Environment Variables
 export LANG=ja_JP.UTF-8
