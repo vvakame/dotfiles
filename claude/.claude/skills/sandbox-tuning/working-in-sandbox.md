@@ -50,4 +50,11 @@ sandbox 外での実行(`dangerouslyDisableSandbox: true`)は許容されてい�
 sandbox が意図して塞いでいるもの。迂回するのは必要なコマンドだけに絞る。
 
 - 本物の gcloud 認証情報が要るコマンド(本番の Cloud Logging を読む、など)。ダミー ADC で済むテストは含めない
-- `git worktree add` / `remove`、`git branch -D` など、保護されたパス(`.git/config`、`.vscode/`、`.mcp.json`)に書くコマンド。`.git/config` に書くだけの `git push -u` は、上の表の書き方で避ける
+- 保護されたパス(`.git/config`、`.vscode/`、`.mcp.json`)に書く git コマンド。ただし `git worktree add` / `git worktree remove` / `git branch -D` は `excludedCommands` に入っているので迂回は要らない。`.git/config` に書くだけの `git push -u` は、上の表の書き方で避ける
+
+## worktree の作成と削除
+
+`git worktree add` / `git worktree remove` / `git branch -D` は `excludedCommands` に入っている。上の「単独で実行する」に従えば sandbox 外で動く。
+
+- `git -C <dir> worktree add ...` は一致しない。`cd <dir> && git worktree add ...` の形にする。
+- 作成先は、リポジトリの親ディレクトリ直下に並べる兄弟ディレクトリだけにする。sandbox 外で動くので、ほかの場所にも作れてしまう。
