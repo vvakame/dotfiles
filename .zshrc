@@ -1,3 +1,6 @@
+# Homebrew の補完 (site-functions) を fpath に入れてから補完を初期化する
+[ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 autoload -U compinit
 compinit
 
@@ -24,7 +27,6 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-[ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
