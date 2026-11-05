@@ -49,7 +49,7 @@
       "mise outdated*",
       "mise install *",
       "mise upgrade *",
-      "herdr workspace list *",
+      "herdr workspace list:*",
       "herdr workspace get *",
       "herdr workspace rename *",
       "git worktree add *",

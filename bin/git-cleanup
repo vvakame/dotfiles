@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# default branch にマージ済みのローカルブランチを消す。使っている worktree がクリーンなら worktree ごと外す。
+#   git cleanup            消す
+#   git cleanup --dry-run  消さずに一覧だけ出す
+# macOS の /bin/bash (3.2) でも動くように書く。
+set -euo pipefail
+
+dry_run=false
+case "${1:-}" in
+  "") ;;
+  --dry-run | -n) dry_run=true ;;
+  *)
+    echo "usage: git cleanup [--dry-run]" >&2
+    exit 2
+    ;;
+esac
+
+remote=origin
+git fetch --prune --quiet "$remote"
+git worktree prune
+
+if ! default=$(git symbolic-ref --quiet --short "refs/remotes/$remote/HEAD"); then
+  echo "$remote/HEAD is not set. Run: git remote set-head $remote --auto" >&2
+  exit 1
+fi
+default_name=${default#"$remote"/}
+
+main_wt=$(git worktree list --porcelain | sed -n '1s/^worktree //p')
+current_wt=$(git rev-parse --show-toplevel)
+first_parents=$(git rev-list --first-parent "$default")
+
+# squash merge / rebase merge も拾うため、ブランチの差分を1コミットにまとめたものが
+# default branch に同じ内容で入っているかを git cherry で見る。
+is_merged() {
+  local branch=$1 base tree squashed
+  git merge-base --is-ancestor "refs/heads/$branch" "$default" && return 0
+  base=$(git merge-base "$default" "refs/heads/$branch") || return 1
+  tree=$(git rev-parse "refs/heads/$branch^{tree}")
+  squashed=$(git commit-tree --no-gpg-sign "$tree" -p "$base" -m squashed)
+  [[ $(git cherry "$default" "$squashed") == "-"* ]]
+}
+
+label=""
+$dry_run && label="(dry-run) "
+
+while IFS=' ' read -r branch tip wt; do
+  [ "$branch" = "$default_name" ] && continue
+  is_merged "$branch" || continue
+
+  # default branch から切っただけでまだコミットの無いブランチも「マージ済み」に見える。
+  # 作ったばかりの worktree を消さないよう、自分のコミットが無いものは残す
+  if grep -qx "$tip" <<<"$first_parents"; then
+    echo "${label}keep: $branch (no commits of its own)"
+    continue
+  fi
+
+  if [ -n "$wt" ]; then
+    if [ "$wt" = "$main_wt" ] || [ "$wt" = "$current_wt" ]; then
+      echo "${label}keep: $branch (in use at $wt)"
+      continue
+    fi
+    if [ -n "$(git -C "$wt" status --porcelain)" ]; then
+      echo "${label}keep: $branch (uncommitted or untracked files in $wt)"
+      continue
+    fi
+    echo "${label}delete: $branch (worktree: $wt)"
+    if ! $dry_run; then
+      git worktree remove "$wt" || {
+        echo "keep: $branch (failed to remove worktree $wt)" >&2
+        continue
+      }
+      git branch -D --quiet "$branch"
+    fi
+  else
+    echo "${label}delete: $branch"
+    $dry_run || git branch -D --quiet "$branch"
+  fi
+done < <(git for-each-ref --format='%(refname:short) %(objectname) %(worktreepath)' refs/heads/)
+
+$dry_run || git worktree prune
