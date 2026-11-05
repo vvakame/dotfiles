@@ -19,6 +19,10 @@ claude/.claude/settings.machine.json
 claude/.claude/CLAUDE.md
 claude/.claude/CLAUDE.machine.md
 
+# スキルのうち、マシンごとに違う使い方(使っているサービスなど)を書くファイル。
+# 公開されるスキル本体は汎用に保ち、固有の部分はこちらに寄せる。
+claude/.claude/skills/*/machine.md
+
 # Claude アカウントからバックグラウンドで同期されてくる Anthropic 配布のスキル。
 # 同期のたびに実体が上書きされるので、リポジトリで管理しても意味がない
 claude/.claude/skills/synced/
