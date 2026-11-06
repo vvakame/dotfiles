@@ -51,7 +51,13 @@
       "mise upgrade *",
       "herdr workspace list:*",
       "herdr workspace get *",
+      "herdr workspace create *",
       "herdr workspace rename *",
+      "herdr workspace remove *",
+      "herdr workspace close *",
+      "herdr agent start *",
+      "herdr agent read *",
+      "herdr agent prompt *",
       "git worktree add *",
       "git worktree remove *",
       "git branch -D *"
