@@ -23,6 +23,7 @@ when_to_use: コマンドが Operation not permitted や EPERM で落ちたと�
 | `~/` 配下に書けない / `!` プレフィックスでも書けない | 「`~/` 配下は書けない」 |
 | `mktemp` が失敗する / `/var/folders/...` を掘ろうとする | 「`mktemp` は `TMPDIR` を無視する(macOS)」 |
 | `.claude` `.vscode` `.git` 配下で `git merge` / `checkout` / `pnpm install` が落ちる | 「`.claude/` の定義ディレクトリは bash から書けない」「保護されるのは `.claude` だけではない」 |
+| `pull` / `checkout` が `unable to unlink` で落ちた後、作業ツリーが HEAD とずれている | 「途中で止まった checkout が作業ツリーを崩す」 |
 | `x509: OSStatus -26276` / TLS 検証の失敗 | 「platform TLS 検証の失敗」 |
 | `Could not resolve host` / `Proxy CONNECT aborted` | 「子プロセスの環境を絞るツールはネットワークが死ぬ」 |
 | `curl` は通るのにツールだけ繋がらない | 「環境変数は届いているのにツールが読まないことがある」 |

@@ -72,6 +72,28 @@ Merge with strategy ort failed.
 
 なお **deny の対象は広がっている**。この環境では会話の途中で `skills` と `hooks` が新たに対象化された(序盤は書けていた)。範囲は実測で確認すること。
 
+### 途中で止まった checkout が作業ツリーを崩す
+
+`git pull --rebase` / `git checkout` / `git merge` は、書けるファイルから順に書き換え、保護されたファイルに来たところで止まる。**止まる前に書き換えたファイルは元に戻らない。** HEAD は動かないので、作業ツリーだけが HEAD とずれる。
+
+実例(dotfiles、2026-11-05): ローカルに1コミット・origin に2コミットある状態で `git pull --rebase --autostash` を sandbox 内で実行した。
+
+```
+error: unable to unlink old '.gitconfig': Operation not permitted
+error: unable to unlink old 'claude/.claude/skills/how-to-use-local-wiki/SKILL.md': Operation not permitted
+error: could not detach HEAD
+```
+
+origin 側に無い `bin/git-cleanup` が作業ツリーから消え、ローカルのコミットで変えた `settings.common.json` も origin の内容に戻っていた。dotfiles の `.gitconfig`(`~/.gitconfig` の実体)も書けない対象に入っている。
+
+**続けて別の git 操作をすると壊れ方が固定される。** sandbox 外で pull をやり直したところ、autostash がこの崩れを「未 commit の変更」として保存し、rebase 後に適用し直した。結果として、commit 済みのファイルが作業ツリーで削除扱いになった。
+
+対処:
+
+- **checkout 系が `unable to unlink` で落ちたら、次の git 操作の前に `git status` を見る。** HEAD と食い違うファイルが崩れた分
+- 崩れた分は `git checkout -- <path>` で HEAD から戻す。sandbox 内で戻せないファイルはユーザーに外で実行してもらう(auto mode では classifier が止めることもある)
+- **保護されたファイルを書き換える pull は、最初から sandbox 外で実行する**のが安全。`git diff --stat HEAD..origin/<branch>` で、pull 前に書き換え対象を確かめられる
+
 ### 保護されるのは `.claude` だけではない
 
 [公式の保護されたパス](https://code.claude.com/docs/ja/permission-modes#protected-paths)には `.git` `.config/git` `.vscode` `.idea` `.husky` `.cargo` `.devcontainer` `.yarn` `.mvn` `.claude` が並ぶ。**ディレクトリ名で判定される**ので、プロジェクトのどこにあっても効く。
